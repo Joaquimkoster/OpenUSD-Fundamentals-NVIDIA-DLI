@@ -1,42 +1,40 @@
 # OpenUSD Fundamentals — NVIDIA DLI
 
-Projeto desenvolvido durante o curso **Fundamentals of Working With OpenUSD**, da NVIDIA Deep Learning Institute (DLI).
+Project developed during the **Fundamentals of Working With OpenUSD** course from the NVIDIA Deep Learning Institute (DLI).
 
-O objetivo do projeto foi aprender os fundamentos do **OpenUSD (Universal Scene Description)** e entender como cenas 3D complexas podem ser estruturadas, compostas e reutilizadas em aplicações como **NVIDIA Omniverse, simulação e Digital Twins industriais**.
+The goal of this project was to learn the fundamentals of **OpenUSD (Universal Scene Description)** and understand how complex 3D scenes can be structured, composed, and reused in applications such as **NVIDIA Omniverse, simulation, and industrial Digital Twins**.
 
 ---
+
 ## 📸 Preview
 
 ### Welding Locker
 
-<img width="1589" height="1245" alt="welding-locker" src="https://github.com/user-attachments/assets/f6044193-833a-4756-82df-bcb73df8c231" />
+<img width="800" alt="Welding Locker" src="https://github.com/user-attachments/assets/f6044193-833a-4756-82df-bcb73df8c231" />
 
 ### Factory Environment
 
-<img width="1599" height="1276" alt="factory-environment" src="https://github.com/user-attachments/assets/55f37bb7-6a25-43d8-b2bf-f08806604a97" />
+<img width="800" alt="Factory Environment" src="https://github.com/user-attachments/assets/55f37bb7-6a25-43d8-b2bf-f08806604a97" />
 
 ---
 
-## 📚 Sobre o projeto
+## 📚 About the Project
 
-Durante o curso, trabalhei na construção e organização de componentes OpenUSD, começando por um **Welding Locker** e posteriormente utilizando conceitos de composição para integrá-lo a estruturas maiores.
+During the course, I worked on building and organizing OpenUSD components, starting with a **Welding Locker** and later using composition concepts to integrate it into larger structures.
 
-O projeto demonstra como um asset pode ser dividido em diferentes arquivos responsáveis por geometria, aparência e composição.
+The project demonstrates how an asset can be divided into different files responsible for geometry, appearance, and composition.
 
 ```text
 Welding_Locker/
 ├── content.usd
 ├── geometry.usdc
 └── looks.usd
-```
+geometry.usdc
 
-### `geometry.usdc`
+Contains the 3D geometry of the Welding Locker and its Prim structure.
 
-Contém a **geometria 3D** do Welding Locker e sua estrutura de Prims.
+Example:
 
-Exemplo:
-
-```text
 World
 └── Geometry
     └── Locker
@@ -44,57 +42,49 @@ World
         ├── fittings
         ├── door
         └── trims
-```
+looks.usd
 
-### `looks.usd`
+Contains information related to the appearance and materials of the component.
 
-Responsável pelas informações relacionadas à **aparência e materiais** do componente.
+Separating geometry from appearance makes it possible to modify materials without directly changing the original geometry.
 
-A separação entre geometria e aparência permite modificar materiais sem alterar diretamente a geometria original.
+content.usd
 
-### `content.usd`
+Used for component composition, bringing together the different elements required to represent the complete asset.
 
-Arquivo utilizado para a **composição do componente**, reunindo as diferentes partes necessárias para representar o asset completo.
+🧠 Concepts Learned
 
----
+During the project, I worked with fundamental OpenUSD concepts, including:
 
-## 🧠 Conceitos aprendidos
+USD, USDA, and USDC
+Stage and Prims
+Prim Hierarchy
+Default Prim
+Layers and Sublayers
+Authoring Layers
+Layer Stack
+Non-destructive Composition
+Geometry and Looks
+Materials
+Material Binding
+Transformations
+Coordinate Systems and World Axis
+References
+Payloads
+Variants and Variant Sets
+Assemblies
+Layouts
+Asset Reuse
+Modular Scene Organization
+Industrial Environment Composition
+Design Proposals using Layers
+USD Composition Debugging
+🏗️ OpenUSD Scene Structure
 
-Durante o projeto, trabalhei com conceitos fundamentais do OpenUSD, incluindo:
+One of the main concepts I learned is that a complex 3D scene does not need to exist as a single large file.
 
-- USD, USDA e USDC
-- Stage e Prims
-- Hierarquia de Prims
-- Default Prim
-- Layers e Sublayers
-- Authoring Layers
-- Layer Stack
-- Composição não destrutiva
-- Geometry e Looks
-- Materials
-- Material Binding
-- Transformações
-- Sistemas de coordenadas e World Axis
-- References
-- Payloads
-- Variants e Variant Sets
-- Assemblies
-- Layouts
-- Reutilização de assets
-- Organização modular de cenas
-- Composição de ambientes industriais
-- Propostas de alteração através de Layers
-- Debugging de composição USD
+Instead, it can be composed of multiple assets and layers:
 
----
-
-## 🏗️ Estrutura de uma cena OpenUSD
-
-Um dos principais conceitos aprendidos foi que uma cena 3D complexa não precisa existir como um único arquivo.
-
-Ela pode ser composta de diversos assets e layers:
-
-```text
                          FACTORY
                             │
              ┌──────────────┼──────────────┐
@@ -112,17 +102,13 @@ Ela pode ser composta de diversos assets e layers:
               GEOMETRY              LOOKS
                                       │
                                   MATERIALS
-```
 
-Recursos como **References, Payloads, Variants e Layers** permitem construir cenas maiores mantendo os assets organizados e reutilizáveis.
+Features such as References, Payloads, Variants, and Layers make it possible to build larger scenes while keeping assets organized and reusable.
 
----
+🧩 Non-Destructive Composition
 
-## 🧩 Composição não destrutiva
+Another important concept was working with different Layers without permanently modifying the original files.
 
-Outro conceito importante foi trabalhar com diferentes Layers sem modificar permanentemente os arquivos originais.
-
-```text
 Base Asset
     ↓
 Geometry
@@ -134,58 +120,44 @@ Layout
 Proposal
     ↓
 Final Stage
-```
 
-Dessa forma, diferentes alterações podem coexistir e ser combinadas pelo OpenUSD.
+This allows different modifications to coexist and be combined by OpenUSD.
 
----
+🔄 Variants
 
-## 🔄 Variants
+Variant Sets allow multiple configurations of the same asset to be created without duplicating its entire structure.
 
-Variant Sets permitem criar diferentes configurações para um mesmo asset sem duplicar toda sua estrutura.
+Example:
 
-Exemplo:
-
-```text
 Welding_Locker
 └── Looks
     ├── Painted
     └── Steel
-```
 
-O mesmo princípio pode ser utilizado para configurações de máquinas, veículos, equipamentos e outros componentes industriais.
+The same principle can be applied to machines, vehicles, equipment, and other industrial components.
 
----
+🔗 References and Payloads
 
-## 🔗 References e Payloads
+References allow assets to be reused in other scenes without duplicating their data.
 
-**References** permitem reutilizar assets em outras cenas sem duplicar seus dados.
-
-```text
 Factory
    ↓
 Lockers Assembly
    ↓
 Welding Locker
-```
 
-**Payloads** permitem controlar o carregamento de partes de cenas maiores, algo importante para trabalhar com ambientes industriais complexos.
+Payloads allow control over which parts of larger scenes are loaded, which is especially useful when working with complex industrial environments.
 
----
+🏭 OpenUSD and Digital Twins
 
-## 🏭 OpenUSD e Digital Twins
+This project introduced me to an approach that goes beyond traditional 3D modeling.
 
-O projeto me apresentou uma abordagem diferente da modelagem 3D tradicional.
+Instead of thinking only in terms of:
 
-Em vez de pensar somente em:
-
-```text
 3D Model
-```
 
-o OpenUSD permite pensar em:
+OpenUSD makes it possible to think in terms of:
 
-```text
 Structured 3D Data
         ↓
 Reusable Assets
@@ -195,57 +167,42 @@ Assemblies
 Industrial Environment
         ↓
 Digital Twin
-```
 
-Essa estrutura fornece uma base para projetos mais avançados envolvendo **Digital Twins, simulação, visualização industrial e NVIDIA Omniverse**.
+This structure provides a foundation for more advanced projects involving Digital Twins, simulation, industrial visualization, and NVIDIA Omniverse.
 
----
-
-## 🛠️ Tecnologias
-
-- OpenUSD
-- NVIDIA Omniverse
-- NVIDIA Kit
-- USD Composer
-- NVIDIA Deep Learning Institute
-- Linux
-
----
-
-## 📂 Estrutura do repositório
-
-```text
+🛠️ Technologies
+OpenUSD
+NVIDIA Omniverse
+NVIDIA Kit
+USD Composer
+NVIDIA Deep Learning Institute
+Linux
+📂 Repository Structure
 openusd-fundamentals/
 │
 ├── Welding_Locker/
 │   ├── content.usd
 │   ├── geometry.usdc
 │   └── looks.usd
+│
+└── README.md
+🎯 Key Skills Acquired
 
-```
+By completing this project, I gained practical experience in:
 
----
+Structuring assets using OpenUSD
+Working with scenes composed of multiple files
+Separating geometry and appearance
+Creating and using Layers and Sublayers
+Working with References and Payloads
+Creating configurations using Variants
+Organizing components into Assemblies
+Reusing assets across different parts of a scene
+Structuring industrial environments
+Understanding the foundations of an OpenUSD workflow for Digital Twins
+📜 Course
 
-## 🎯 Principais conhecimentos adquiridos
-
-Ao concluir o projeto, adquiri uma base prática para:
-
-- Estruturar assets utilizando OpenUSD;
-- Trabalhar com cenas compostas por múltiplos arquivos;
-- Organizar geometria e aparência separadamente;
-- Criar e utilizar Layers e Sublayers;
-- Trabalhar com References e Payloads;
-- Criar configurações utilizando Variants;
-- Organizar componentes em Assemblies;
-- Reutilizar assets em diferentes partes de uma cena;
-- Estruturar ambientes industriais;
-- Compreender a base de um workflow OpenUSD voltado para Digital Twins.
-
----
-
-## 📜 Curso
-
-**Fundamentals of Working With OpenUSD**  
+Fundamentals of Working With OpenUSD
 NVIDIA Deep Learning Institute (DLI)
 
-Projeto desenvolvido como parte dos meus estudos em **OpenUSD, NVIDIA Omniverse e Digital Twins**.
+Project developed as part of my studies in OpenUSD, NVIDIA Omniverse, and Digital Twins.
