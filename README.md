@@ -1,5 +1,7 @@
-![Uploading factory-environment.jpeg…]()
-![Uploading welding-locker.jpeg…]()
+<img width="1599" height="1276" alt="factory-environment" src="https://github.com/user-attachments/assets/55f37bb7-6a25-43d8-b2bf-f08806604a97" />
+<img width="1589" height="1245" alt="welding-locker" src="https://github.com/user-attachments/assets/f6044193-833a-4756-82df-bcb73df8c231" />
+
+
 # OpenUSD Fundamentals — NVIDIA DLI
 
 Projeto desenvolvido durante o curso **Fundamentals of Working With OpenUSD**, da NVIDIA Deep Learning Institute (DLI).
