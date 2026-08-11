@@ -1,3 +1,5 @@
+![Uploading factory-environment.jpeg…]()
+![Uploading welding-locker.jpeg…]()
 # OpenUSD Fundamentals — NVIDIA DLI
 
 Projeto desenvolvido durante o curso **Fundamentals of Working With OpenUSD**, da NVIDIA Deep Learning Institute (DLI).
