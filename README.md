@@ -5,20 +5,15 @@ Projeto desenvolvido durante o curso **Fundamentals of Working With OpenUSD**, d
 O objetivo do projeto foi aprender os fundamentos do **OpenUSD (Universal Scene Description)** e entender como cenas 3D complexas podem ser estruturadas, compostas e reutilizadas em aplicações como **NVIDIA Omniverse, simulação e Digital Twins industriais**.
 
 ---
-
 ## 📸 Preview
 
 ### Welding Locker
 
-![Welding Locker](media/welding-locker.png)
+![Welding Locker](https://github.com/user-attachments/assets/...)
 
 ### Factory Environment
 
-![Factory Environment](media/factory-environment.png)
-
-### Demonstração
-
-https://github.com/user-attachments/assets/SEU-VIDEO-AQUI
+![Factory Environment](https://github.com/user-attachments/assets/...)
 
 ---
 
