@@ -221,13 +221,7 @@ openusd-fundamentals/
 │   ├── content.usd
 │   ├── geometry.usdc
 │   └── looks.usd
-│
-├── media/
-│   ├── welding-locker.png
-│   ├── factory-environment.png
-│   └── demo.mp4
-│
-└── README.md
+
 ```
 
 ---
