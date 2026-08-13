@@ -4,6 +4,8 @@ Project developed during the **Fundamentals of Working With OpenUSD** course fro
 
 The goal of this project was to learn the fundamentals of **OpenUSD (Universal Scene Description)** and understand how complex 3D scenes can be structured, composed, and reused in applications such as **NVIDIA Omniverse, simulation, and industrial Digital Twins**.
 
+This file contains only the welding equipment cabinet.
+
 ---
 
 ## 📸 Preview
